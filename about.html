@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>About - AV Collision Reports</title>
+
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;700&display=swap" rel="stylesheet">
+
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="css/styles.css">
+</head>
+
+<body>
+    <div class="app-container">
+        <header class="main-header">
+            <div class="header-content">
+                <h1>AV Collision Tracker</h1>
+                <p>Visualizing Autonomous Vehicle Incidents in California</p>
+            </div>
+            <nav>
+                <a href="index.html">Map View</a>
+                <a href="analytics.html">Analytics</a>
+                <a href="about.html" class="active">About</a>
+            </nav>
+        </header>
+
+        <main class="main-content about-layout">
+            <div class="about-container">
+                <section class="about-section">
+                    <h2>Project Overview</h2>
+                    <p>
+                        This application is designed to visualize and analyze collision reports involving autonomous
+                        vehicles (AVs) in California.
+                        As autonomous vehicle technology advances and pilot programs expand, transparency and public
+                        awareness of safety incidents are crucial.
+                    </p>
+                    <p>
+                        The <strong>AV Collision Tracker</strong> provides an interactive map to explore where incidents
+                        occur, filters to slice the data by manufacturer or severity,
+                        and an analytics dashboard to understand broader trends.
+                    </p>
+                </section>
+
+                <section class="about-section">
+                    <h2>Data Source</h2>
+                    <p>
+                        The data presented in this application is sourced from the <a
+                            href="https://www.dmv.ca.gov/portal/vehicle-industry-services/autonomous-vehicles/autonomous-vehicle-collision-reports/"
+                            target="_blank">California Department of Motor Vehicles (DMV) Autonomous Vehicle Collision
+                            Reports</a>.
+                    </p>
+                    <p>
+                        Manufacturers testing autonomous vehicles on public roads in California are required to report
+                        any collision result in property damage, bodily injury, or death within 10 days of the incident.
+                    </p>
+                    <p class="disclaimer">
+                        <strong>Disclaimer:</strong> This is a student project for visualization purposes. The location
+                        data is geocoded based on description and may have slight inaccuracies.
+                        Please refer to official DMV reports for legal or authoritative use.
+                    </p>
+                </section>
+
+                <section class="about-section">
+                    <h2>Features</h2>
+                    <ul>
+                        <li><strong>Interactive Map:</strong> View exact locations of reported collisions.</li>
+                        <li><strong>Smart Filtering:</strong> Filter by vehicle manufacturer, collision type, control
+                            state, and severity.</li>
+                        <li><strong>Analytics Dashboard:</strong> Visualize trends over time and compare manufacturer
+                            safety records.</li>
+                    </ul>
+                </section>
+            </div>
+        </main>
+    </div>
+</body>
+
+</html>

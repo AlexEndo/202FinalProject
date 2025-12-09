@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Analytics - AV Collision Reports</title>
+
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;700&display=swap" rel="stylesheet">
+
+    <!-- Chart.js -->
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="css/styles.css">
+</head>
+
+<body>
+    <div class="app-container">
+        <header class="main-header">
+            <div class="header-content">
+                <h1>AV Collision Tracker</h1>
+                <p>Visualizing Autonomous Vehicle Incidents in California</p>
+            </div>
+            <nav>
+                <a href="index.html">Map View</a>
+                <a href="analytics.html" class="active">Analytics</a>
+                <a href="about.html">About</a>
+            </nav>
+        </header>
+
+        <main class="main-content analytics-layout">
+            <div class="analytics-container">
+                <div class="chart-card wide">
+                    <h2>Incidents Over Time</h2>
+                    <div class="chart-wrapper">
+                        <canvas id="timeChart"></canvas>
+                    </div>
+                </div>
+
+                <div class="chart-card">
+                    <h2>Incidents by Manufacturer</h2>
+                    <div class="chart-wrapper">
+                        <canvas id="manufacturerChart"></canvas>
+                    </div>
+                </div>
+
+                <div class="chart-card">
+                    <h2>Collision Types</h2>
+                    <div class="chart-wrapper">
+                        <canvas id="typeChart"></canvas>
+                    </div>
+                </div>
+
+                <div class="chart-card">
+                    <h2>Severity Distribution</h2>
+                    <div class="chart-wrapper">
+                        <canvas id="severityChart"></canvas>
+                    </div>
+                </div>
+            </div>
+        </main>
+    </div>
+
+    <!-- Analytics Script -->
+    <script src="js/analytics.js"></script>
+</body>
+
+</html>
