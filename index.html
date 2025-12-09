@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AV Collision Reports - California</title>
+
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;700&display=swap" rel="stylesheet">
+
+    <!-- Leaflet CSS -->
+    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css"
+        integrity="sha256-p4NxAoJBhIIN+hmNHrzRCf9tD/miZyoHS5obTRR9BMY=" crossorigin="" />
+
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="css/styles.css">
+</head>
+
+<body>
+    <div class="app-container">
+        <header class="main-header">
+            <div class="header-content">
+                <h1>AV Collision Tracker</h1>
+                <p>Visualizing Autonomous Vehicle Incidents in California</p>
+            </div>
+            <nav>
+                <a href="#" class="active">Map View</a>
+                <a href="#">Analytics</a>
+                <a href="#">About</a>
+            </nav>
+        </header>
+
+        <main class="main-content">
+            <aside class="sidebar">
+                <div class="filters-header">
+                    <h2>Filters</h2>
+                    <button id="reset-filters">Reset</button>
+                </div>
+
+                <div class="filter-group">
+                    <label>Manufacturer</label>
+                    <select id="manufacturer-filter">
+                        <option value="all">All Manufacturers</option>
+                        <!-- Options populated dynamically -->
+                    </select>
+                </div>
+
+                <div class="filter-group">
+                    <label>Collision Type</label>
+                    <select id="collision-type-filter">
+                        <option value="all">All Types</option>
+                    </select>
+                </div>
+
+                <div class="filter-group">
+                    <label>Control State</label>
+                    <select id="control-state-filter">
+                        <option value="all">All States</option>
+                        <option value="autonomous">Autonomous</option>
+                        <option value="conventional">Conventional</option>
+                    </select>
+                </div>
+
+
+
+                <div class="filter-group">
+                    <label>Severity</label>
+                    <div class="checkbox-group" id="severity-filters">
+                        <label><input type="checkbox" value="Property Damage Only" checked> Property Damage</label>
+                        <label><input type="checkbox" value="Injury" checked> Injury</label>
+                        <label><input type="checkbox" value="Fatality" checked> Fatality</label>
+                    </div>
+                </div>
+
+                <div class="results-info">
+                    <span id="result-count">0</span> collisions found
+                </div>
+
+                <div class="collision-list" id="collision-list">
+                    <!-- List items will be injected here -->
+                </div>
+            </aside>
+
+            <section class="map-container">
+                <div id="map"></div>
+            </section>
+        </main>
+    </div>
+
+    <!-- Leaflet JS -->
+    <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"
+        integrity="sha256-20nQCchB9co0qIjJZRGuk2/Z9VM+kNiyxNV1lvTlZBo=" crossorigin=""></script>
+
+    <!-- App Scripts -->
+    <script src="js/map.js"></script>
+    <script src="js/app.js"></script>
+</body>
+
+</html>
