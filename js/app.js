@@ -36,17 +36,20 @@ function setupEventListeners() {
     const collisionTypeSelect = document.getElementById('collision-type-filter');
     const controlStateSelect = document.getElementById('control-state-filter');
     const severityInputs = document.querySelectorAll('#severity-filters input');
+    const searchInput = document.getElementById('search-input');
 
     if (manufacturerSelect) manufacturerSelect.addEventListener('change', filterData);
     if (collisionTypeSelect) collisionTypeSelect.addEventListener('change', filterData);
     if (controlStateSelect) controlStateSelect.addEventListener('change', filterData);
     severityInputs.forEach(input => input.addEventListener('change', filterData));
+    if (searchInput) searchInput.addEventListener('input', filterData);
 
     document.getElementById('reset-filters').addEventListener('click', () => {
         if (manufacturerSelect) manufacturerSelect.value = 'all';
         if (collisionTypeSelect) collisionTypeSelect.value = 'all';
         if (controlStateSelect) controlStateSelect.value = 'all';
         severityInputs.forEach(input => input.checked = true);
+        if (searchInput) searchInput.value = '';
         filterData();
     });
 
@@ -82,6 +85,7 @@ function filterData() {
     const selectedState = document.getElementById('control-state-filter').value;
     const checkedSeverities = Array.from(document.querySelectorAll('#severity-filters input:checked'))
         .map(input => input.value);
+    const searchTerm = document.getElementById('search-input').value.toLowerCase();
 
     filteredData = allData.filter(item => {
         const matchManuf = selectedManuf === 'all' || item.manufacturer === selectedManuf;
@@ -91,7 +95,11 @@ function filterData() {
         // Exact match for severity string
         const matchSeverity = checkedSeverities.includes(item.severity);
 
-        return matchManuf && matchType && matchState && matchSeverity;
+        // Text Search
+        const searchTarget = `${item.manufacturer} ${item.description} ${item.collision_type}`.toLowerCase();
+        const matchSearch = searchTerm === '' || searchTarget.includes(searchTerm);
+
+        return matchManuf && matchType && matchState && matchSeverity && matchSearch;
     });
 
     updateUI();
