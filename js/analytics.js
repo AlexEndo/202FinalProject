@@ -8,7 +8,7 @@ async function initAnalytics() {
         if (!response.ok) throw new Error('Failed to load data');
         const data = await response.json();
 
-        console.log(`Analytics loaded ${data.length} records.`);
+
         renderCharts(data);
 
     } catch (error) {
@@ -44,7 +44,6 @@ function renderTimeChart(data) {
             const key = `${dateObj.getFullYear()}-${String(dateObj.getMonth() + 1).padStart(2, '0')}`;
             dateCounts[key] = (dateCounts[key] || 0) + 1;
         } catch (e) {
-            console.warn("Invalid date:", item.date);
         }
     });
 

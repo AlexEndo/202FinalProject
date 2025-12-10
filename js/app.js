@@ -18,8 +18,6 @@ async function initApp() {
         allData = await response.json();
         filteredData = [...allData];
 
-        console.log(`Loaded ${allData.length} records.`);
-
         populateFilters();
         updateUI();
 
@@ -53,8 +51,9 @@ function setupEventListeners() {
         filterData();
     });
 
-    console.log("EventListeners setup complete. CollisionTypeSelect found:", !!collisionTypeSelect);
 }
+
+
 
 function populateFilters() {
     const manufactures = [...new Set(allData.map(item => item.manufacturer))];
